@@ -25,7 +25,7 @@
 <p>プレイヤーとコートにそれぞれレベルを設定することで、同じレベルのプレイヤーを特定のコートに割り当てられます。</p>
 
 <h3>プレイヤーのレベル</h3>
-<p>Players タブのレベルバッジ（または編集画面の <strong>Level</strong>）で 1・2・3 を設定します。</p>
+<p>Players タブのレベルバッジ（または編集画面の <strong>Level</strong>（レベル））で 1・2・3 を設定します。</p>
 <table>
   <tr><th>レベル</th><th>色</th><th>用途例</th></tr>
   <tr><td>1</td><td>赤</td><td>初級</td></tr>
@@ -34,10 +34,10 @@
 </table>
 
 <h3>コートのレベルと Level Fixed</h3>
-<p>Courts タブのコート編集画面で <strong>Level</strong> を設定し、<strong>Lock Level</strong> をオンにすると <code>Level Fixed</code> コートになります。</p>
+<p>Courts タブのコート編集画面で <strong>Level</strong>（レベル）を設定し、<strong>Lock Level</strong>（レベル固定）をオンにすると <code>Level Fixed</code>（レベル固定）コートになります。</p>
 <ul>
-  <li><strong>Level Fixed</strong> — 設定したレベルのプレイヤーのみ割り当てられます</li>
-  <li><strong>Level Free</strong> — レベルに関係なくすべてのプレイヤーが対象になります</li>
+  <li><strong>Level Fixed</strong>（レベル固定） — 設定したレベルのプレイヤーのみ割り当てられます</li>
+  <li><strong>Level Free</strong>（レベルフリー） — レベルに関係なくすべてのプレイヤーが対象になります</li>
 </ul>
 <div class="ss"><img src="images/advanced-level-split.png" alt="レベル分けの例（コート一覧）"></div>
 
@@ -47,18 +47,19 @@
 <div class="note">⚠️ <strong>固定ペア</strong>を組んでいるプレイヤーは 1&amp;2 コートの対象外です（固定ペアは同レベルに揃うため、必ずレベル1×レベル2で組む 1&amp;2 コートの条件と両立しないため）。固定ペアのプレイヤーは通常のレベル別コート、または Level Free のコートに割り当てられます。</div>
 
 <h2 id="free-mode">3. フリーモード（動的コート割り当て）</h2>
-<p>Game タブ上部のモードセレクターで <strong>Free</strong> を選ぶと、フリーモードに切り替わります。</p>
+<p>Game タブ上部のモードセレクターで <strong>Free</strong>（フリー）を選ぶと、フリーモードに切り替わります。</p>
 <p>フリーモードでは、コートごとに試合の終了・再開を個別に管理できます。空いたコートだけに次の組み合わせが生成されるため、試合時間がバラバラでも効率よく進行できます。</p>
 
 <h3>フリーモードの操作</h3>
 <ul>
   <li>試合が終わったら、そのコートの行を左スワイプして <strong>Finish</strong>（終了マーク）をタップ</li>
-  <li><code>Generate Combination</code> で空きコートのみ次の組み合わせが生成されます</li>
+  <li><code>Generate Combination</code>（組み合わせ生成）で空きコートのみ次の組み合わせが生成されます</li>
   <li>終了済みコートは灰色、新しく割り当てられたコートは黄色でハイライトされます</li>
 </ul>
 <div class="ss"><img src="images/advanced-free-mode.png" alt="フリーモードのコート一覧"></div>
+<div class="ss"><img src="images/advanced-free-mode-swipe.png" alt="コートの行を左スワイプして Finish ボタンを表示した状態"></div>
 <div class="tip">💡 フリーモードでは Apple Watch からもコートの終了マークを操作できます。</div>
-<div class="tip">💡 コート一覧での Finish/Resume 操作と、スコア入力画面の <strong>Finished</strong> トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
+<div class="tip">💡 コート一覧での Finish（終了）/Resume（再開）操作と、スコア入力画面の <strong>Finished</strong>（終了）トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
 
 <h2 id="default-absent">4. デフォルト欠席（Absent by Default）</h2>
 <p>毎回欠席しがちなメンバーのプレイヤー編集画面で <code>Absent by Default</code> をオンにしてメンバー保存しておくと、次にメンバーを読み込んだ際に自動的に休憩状態でリストに追加されます。当日参加する場合はトグルをオンに切り替えてください。</p>
@@ -68,15 +69,15 @@
 
 <h3>送信側の操作</h3>
 <ul>
-  <li>Game タブ左上の「⋯」→ <strong>Share Session</strong> をタップ</li>
-  <li>案内アラートで <strong>Continue</strong> を選ぶと共有シートが開くので、AirDrop で相手の端末に送信</li>
+  <li>Game タブ左上の「⋯」→ <strong>Share Session</strong>（セッションを共有）をタップ</li>
+  <li>案内アラートで <strong>Continue</strong>（続ける）を選ぶと共有シートが開くので、AirDrop で相手の端末に送信</li>
 </ul>
 
 <h3>受信側の操作</h3>
 <ul>
   <li>AirDrop を承認するとファイルが Files アプリに保存されます</li>
   <li>Files でそのファイルをタップ →（プレビュー画面の）共有ボタン → <strong>PairGen</strong> を選択</li>
-  <li>PairGen が起動し、確認ダイアログが表示されるので <strong>Replace</strong> をタップすると取り込まれます</li>
+  <li>PairGen が起動し、確認ダイアログが表示されるので <strong>Replace</strong>（置き換え）をタップすると取り込まれます</li>
 </ul>
 
 <div class="tip">💡 取り込み後、現在のプレイヤーリストと組み合わせは送信側のデータに<strong>置き換わります</strong>（送信側にないプレイヤーもメンバーDBには残ります）。同じ名前で所属グループが1つ以上重なるプレイヤーは同一人物とみなして統合されます。</div>
