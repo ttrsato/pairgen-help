@@ -10,13 +10,15 @@
   table{border-collapse:collapse;width:100%;margin:12px 0}
   th,td{border:1px solid #ddd;padding:8px 12px;text-align:left}
   th{background:#f5f5f5;font-weight:600}
-  .ss{background:#f5f5f5;border:1px dashed #bbb;border-radius:8px;text-align:center;padding:28px;color:#999;font-size:13px;margin:16px 0}
+  .ss img{max-width:100%;border-radius:8px;border:1px solid #ddd;display:block;margin:16px auto}
   .tip{background:#e8f5e9;border-left:4px solid #4caf50;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
   .note{background:#fff8e1;border-left:4px solid #ffc107;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .back-link{display:inline-block;margin-bottom:8px;font-size:14px}
 </style>
 </head>
 <body>
 
+<p class="back-link"><a href="home.html">← ホームに戻る</a></p>
 <h1>高度な使い方</h1>
 
 <h2>1. レベル分け</h2>
@@ -37,11 +39,11 @@
   <li><strong>Level Fixed</strong> — 設定したレベルのプレイヤーのみ割り当てられます</li>
   <li><strong>Level Free</strong> — レベルに関係なくすべてのプレイヤーが対象になります</li>
 </ul>
-<div class="ss">スクリーンショット：レベル分けの例（コート一覧）</div>
+<div class="ss"><img src="images/advanced-level-split.png" alt="レベル分けの例（コート一覧）"></div>
 
 <h2>2. ミックスダブルス（レベル 1&amp;2）</h2>
 <p>コートのレベルを <strong>1&amp;2</strong> に設定すると、レベル1のプレイヤーとレベル2のプレイヤーを混合したペアが組まれます。男女混合や、レベル差のある練習会でご活用ください。</p>
-<div class="ss">スクリーンショット：1&amp;2 コートの割り当て例</div>
+<div class="ss"><img src="images/advanced-mix.png" alt="1&amp;2 コートの割り当て例"></div>
 
 <h2>3. フリーモード（動的コート割り当て）</h2>
 <p>Game タブ上部のモードセレクターで <strong>Free</strong> を選ぶと、フリーモードに切り替わります。</p>
@@ -53,7 +55,7 @@
   <li><code>Generate Combination</code> で空きコートのみ次の組み合わせが生成されます</li>
   <li>終了済みコートは灰色、新しく割り当てられたコートは黄色でハイライトされます</li>
 </ul>
-<div class="ss">スクリーンショット：フリーモードのコート一覧</div>
+<div class="ss"><img src="images/advanced-free-mode.png" alt="フリーモードのコート一覧"></div>
 <div class="tip">💡 フリーモードでは Apple Watch からもコートの終了マークを操作できます。</div>
 <div class="tip">💡 コート一覧での Finish/Resume 操作と、スコア入力画面の <strong>Finished</strong> トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
 

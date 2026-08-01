@@ -8,40 +8,42 @@
   h3{font-size:15px;font-weight:600;margin-top:24px}
   p{margin:8px 0}
   code{background:#f0f0f0;padding:1px 6px;border-radius:4px;font-size:14px}
-  .ss{background:#f5f5f5;border:1px dashed #bbb;border-radius:8px;text-align:center;padding:28px;color:#999;font-size:13px;margin:16px 0}
+  .ss img{max-width:100%;border-radius:8px;border:1px solid #ddd;display:block;margin:16px auto}
   .tip{background:#e8f5e9;border-left:4px solid #4caf50;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .back-link{display:inline-block;margin-bottom:8px;font-size:14px}
 </style>
 </head>
 <body>
 
+<p class="back-link"><a href="home.html">← ホームに戻る</a></p>
 <h1>使ってみよう！</h1>
 <p>PairGen は <strong>Game</strong>・<strong>Players</strong>・<strong>Courts</strong> の3つのタブで構成されています。まずは基本の流れを試してみましょう。</p>
 
-<div class="ss">スクリーンショット：タブ構成の概要</div>
+<div class="ss"><img src="images/home-main.png" alt="タブ構成の概要"></div>
 
 <h2>1. プレイヤー数を設定する</h2>
 <p><strong>Players</strong> タブを開きます。画面下部の <code>＋</code> / <code>－</code> ボタンでプレイヤー数を増減できます。</p>
-<div class="ss">スクリーンショット：Players タブ・+/- ボタン</div>
+<div class="ss"><img src="images/players-plusminus.png" alt="Players タブ・+/- ボタン"></div>
 <p>初期状態では「1」「2」「3」…という番号が名前として割り当てられています。名前を変えるには、プレイヤー行をタップして編集画面を開いてください。</p>
 <p>画面上部のテキストフィールドに名前を入力して <code>Add</code> をタップすると、名前付きでプレイヤーを追加することもできます。カンマ区切りで複数名を一度に入力できます（例：<code>Alice, Bob, Carol, Dave</code>）。</p>
 <div class="tip">💡 マイクアイコンをタップすると音声入力も使えます。</div>
 
 <h2>2. コート数を確認する</h2>
 <p><strong>Courts</strong> タブを開きます。画面下部の <code>＋</code> / <code>－</code> ボタンでコート数を調整してください。</p>
-<div class="ss">スクリーンショット：Courts タブ</div>
+<div class="ss"><img src="images/courts-list.png" alt="Courts タブ"></div>
 
 <h2>3. 組み合わせを生成する</h2>
 <p><strong>Game</strong> タブを開いて <code>Generate Combination</code> ボタンをタップします。プレイヤーが各コートに自動で割り当てられます。</p>
-<div class="ss">スクリーンショット：Game タブ・生成結果</div>
+<div class="ss"><img src="images/home-main.png" alt="Game タブ・生成結果"></div>
 <p>ボタンをタップするたびに次のラウンドの組み合わせが追加されます。重複が少なくなるよう自動的に調整されます。</p>
 
 <h2>4. 出場状態を変更する（休憩・復帰）</h2>
 <p>Players タブで各プレイヤー行右端のトグルが<strong>出場状態</strong>を表します。トグルをオフにすると休憩中となり、そのプレイヤーは次の組み合わせから除外されます。復帰するときはトグルをオンに戻してください。</p>
-<div class="ss">スクリーンショット：出場状態トグル</div>
+<div class="ss"><img src="images/players-toggle.png" alt="出場状態トグル"></div>
 
 <h2>5. 直前の組み合わせを取り消す</h2>
 <p>Game タブで、最後のラウンドの行を<strong>左にスワイプ</strong>すると削除できます。プレイヤーの出場回数なども元の状態に戻ります。</p>
-<div class="ss">スクリーンショット：スワイプで取り消し</div>
+<div class="ss"><img src="images/game-swipe-delete.png" alt="スワイプで取り消し"></div>
 
 <h2>6. 全データをリセットする</h2>
 <p>Game タブ右上の <code>↩</code>（リセット）ボタンをタップすると、プレイヤーリストと試合結果がすべてリセットされます。</p>
