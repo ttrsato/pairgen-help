@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>PairGen – サーバー機能</title>
+<style>
+  body{font-family:-apple-system,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#1a1a1a;line-height:1.75}
+  h1{font-size:26px;font-weight:700;border-bottom:2px solid #e0e0e0;padding-bottom:10px}
+  h2{font-size:18px;font-weight:600;margin-top:36px;color:#1a6fbf}
+  code{background:#f0f0f0;padding:1px 6px;border-radius:4px;font-size:14px}
+  .ss{background:#f5f5f5;border:1px dashed #bbb;border-radius:8px;text-align:center;padding:28px;color:#999;font-size:13px;margin:16px 0}
+  .tip{background:#e8f5e9;border-left:4px solid #4caf50;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .warn{background:#fff8e1;border-left:4px solid #ffc107;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+</style>
+</head>
+<body>
+
+<h1>サーバー機能（試験的）</h1>
+<p>PairGen を入れた端末（マスター）でサーバーを起動すると、同じ Wi-Fi に接続した他の携帯・タブレットの Web ブラウザから、現在の組み合わせやプレイヤー一覧を見たり、一部の操作を行ったりできます。大会運営スタッフなど、複数人でコート状況を共有したい場合に便利です。普段のゲーム練などでもマスターの端末以外の複数端末から OS に関係なく現在の状況や進行を操作することが可能です。またゲーム練の途中からフリーモードに切り替えてコートごとにレベルを割り振って個別に進行を操作することも可能です。</p>
+<div class="warn">⚠️ この機能は試験的なものです。今後の更新で仕様が変わる可能性があります。</div>
+
+<h2>1. サーバーを起動する</h2>
+<p><strong>Game タブ</strong>左上の Wi-Fi アイコン（または「…」メニューの「Start Server」）をタップします。案内画面が表示されるので、内容を確認して「スタート」をタップすると起動します。</p>
+<div class="ss">スクリーンショット：サーバー起動画面</div>
+<div class="warn">⚠️ サーバー稼働中は、この端末の画面をロックしたり他のアプリに切り替えたりしないでください。他の端末との接続が切れる場合があります。</div>
+
+<h2>2. 他の端末から接続する</h2>
+<p>接続する端末を、マスター端末と同じ Wi-Fi（またはマスター端末のインターネット共有／パーソナルホットスポット）に接続してください。サーバー起動中に Wi-Fi アイコンをタップすると、接続用の URL と QR コードが表示されます。QR コードを読み取るか、URL を直接ブラウザで開いてください。</p>
+<div class="ss">スクリーンショット：QRコード表示画面</div>
+
+<h2>3. Web ページでできること</h2>
+<ul>
+  <li>現在の組み合わせ（ラウンド／フリー両モード対応）とプレイヤー一覧の確認</li>
+  <li>各コートの表示にレベルバッジを表示</li>
+  <li><strong>スコア入力</strong> — コートの組み合わせをタップするとスコア入力画面が開きます。L/Rボタンでの得点入力（タップの都度サーバーへ即時反映）、サーバー/レシーバーの表示と交代、undo、エンド交代・サーブ交代、セット（ゲーム）の終了設定に対応</li>
+  <li><strong>組み合わせ生成</strong> — 次のラウンドの組み合わせを生成します</li>
+  <li><strong>コートの終了／再開</strong>（フリーモード時）— コートをタップして切り替えます</li>
+  <li><strong>プレイヤーの出場／休憩の切り替え</strong></li>
+  <li><strong>プレイヤーのレベル変更</strong> — レベルバッジをタップして巡回変更します</li>
+  <li><strong>ラウンド／フリーの切り替え</strong> — 見出し右のスイッチで切り替えます</li>
+</ul>
+<div class="ss">スクリーンショット：Web ページ表示例</div>
+<div class="tip">💡 Web ページは2.5秒おきに自動更新されます。手動でのリロードは不要です。</div>
+
+<h2>4. サーバーを停止する</h2>
+<p>再度 Wi-Fi アイコンをタップすると、稼働状況の確認画面が開きます。「Stop Server」をタップすると停止します。</p>
+
+</body>
+</html>
