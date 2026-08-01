@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta charset="UTF-8"><title>PairGen – プレイヤーの編集</title>
+<head><meta charset="UTF-8"><title>PairGen – プレイヤータブ</title>
 <style>
   body{font-family:-apple-system,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#1a1a1a;line-height:1.75}
   h1{font-size:26px;font-weight:700;border-bottom:2px solid #e0e0e0;padding-bottom:10px}
@@ -9,13 +9,41 @@
   code{background:#f0f0f0;padding:1px 6px;border-radius:4px;font-size:14px}
   .ss img{max-width:100%;border-radius:8px;border:1px solid #ddd;display:block;margin:16px auto}
   .tip{background:#e8f5e9;border-left:4px solid #4caf50;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .note{background:#fff8e1;border-left:4px solid #ffc107;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
   .back-link{display:inline-block;margin-bottom:8px;font-size:14px}
+  .toc{background:#f5f8fb;border:1px solid #dde6ee;border-radius:8px;padding:14px 20px;margin:16px 0 28px}
+  .toc ul{margin:0;padding-left:20px}
+  .toc li{margin-bottom:4px;font-size:14px}
+  .toc li ul{margin-top:4px;padding-left:18px}
+  .toc li li{margin-bottom:2px;font-size:13px}
+  .toc a{color:#1a6fbf;text-decoration:none}
+  .toc a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
 <p class="back-link"><a href="home.html">← ホームに戻る</a></p>
-<h1>プレイヤーの編集</h1>
+<h1>プレイヤータブ</h1>
+
+<nav class="toc">
+<ul>
+  <li><a href="#add-remove">1. プレイヤーを追加・削除する</a></li>
+  <li><a href="#reset-players">2. プレイヤーのリセット</a></li>
+  <li><a href="#rest-toggle">3. 出場状態を変更する（休憩・復帰）</a></li>
+  <li><a href="#rename">4. 名前を変更する</a></li>
+  <li><a href="#level">5. レベルを設定する</a></li>
+  <li><a href="#default-absent">6. デフォルト欠席を設定する</a></li>
+  <li><a href="#fixed-pair">7. 固定ペアを設定する</a></li>
+  <li><a href="#status">8. 現在の出場状況を確認する</a></li>
+  <li><a href="#pin">9. ピン留めで優先出場させる</a></li>
+  <li><a href="#save-load">10. メンバーを保存・読み込む</a>
+    <ul>
+      <li><a href="#groups">グループについて</a></li>
+    </ul>
+  </li>
+  <li><a href="#shuffle">11. 開始順をシャッフルする</a></li>
+</ul>
+</nav>
 
 <h2 id="add-remove">1. プレイヤーを追加・削除する</h2>
 <p>Players タブ下部の <code>＋</code> / <code>－</code> ボタンをタップするだけで、プレイヤーの人数を簡単に増減できます。追加されたプレイヤーには、初期状態で「1」「2」「3」…という数字がそのまま名前として割り当てられます。特定の1人だけを削除したい場合は、編集画面右上のゴミ箱アイコン、またはリストで左にスワイプして削除できます。</p>
@@ -23,35 +51,44 @@
 <div class="tip">💡 画面上部のテキストフィールドに名前を入力して <code>Add</code>（追加）をタップすると、名前付きでプレイヤーを追加することもできます。カンマ区切りで複数名を一度に入力できます（例：<code>Alice, Bob, Carol, Dave</code>）。マイクアイコンで音声入力も使えます。</div>
 <div class="tip">💡 プレイヤーの追加・削除は、組み合わせ生成後や試合の途中からでも自由に行えます。飛び入り参加や途中退出にもそのまま対応できます。</div>
 
-<h2 id="rename">2. 名前を変更する</h2>
+<h2 id="reset-players">2. プレイヤーのリセット</h2>
+<p>Players タブ右上の <code>↩</code>（リセット）ボタンをタップすると、確認アラート「Reset Players」（プレイヤーをリセット）が表示されます。<strong>Reset</strong>（リセット）を選ぶと、現在登録されているプレイヤーと試合結果がすべて削除され、初期状態の4人にリセットされます。</p>
+<div class="note">⚠️ この操作は元に戻せません。<code>⋯</code> メニューの <strong>Save</strong>（保存）で保存済みのメンバーデータベース自体は影響を受けませんが、現在のプレイヤーリストと試合結果は失われます。</div>
+<div class="tip">💡 Game タブの <code>↩</code> ボタン（ゲーム情報を削除）とは異なり、こちらはプレイヤー自体も削除されます。試合結果だけを消したい場合は Game タブのリセットをご利用ください。</div>
+
+<h2 id="rest-toggle">3. 出場状態を変更する（休憩・復帰）</h2>
+<p>Players タブで各プレイヤー行右端のトグルが<strong>出場状態</strong>を表します。トグルをオフにすると休憩中となり、そのプレイヤーは次の組み合わせから除外されます。復帰するときはトグルをオンに戻してください。</p>
+<div class="ss"><img src="images/players-toggle.png" alt="出場状態トグル"></div>
+
+<h2 id="rename">4. 名前を変更する</h2>
 <p>Players タブでプレイヤーの行をタップすると編集画面が開きます。<strong>Player Info</strong>（プレイヤー情報）セクションの<strong>Name</strong>（名前）フィールドを編集してください。</p>
 <div class="ss"><img src="images/player-edit-main.png" alt="プレイヤー編集画面"></div>
 
-<h2 id="level">3. レベルを設定する</h2>
+<h2 id="level">5. レベルを設定する</h2>
 <p>各プレイヤーには <strong>1・2・3</strong> のレベルを設定できます。Players タブのリスト左端にあるレベルバッジをタップするたびに 1→2→3→1 と切り替わります。編集画面の <strong>Level</strong>（レベル）からも変更できます。</p>
 <div class="ss"><img src="images/players-overview.png" alt="レベルバッジ"></div>
 <p>レベルはコートへの割り当てに使用されます。詳しくは「高度な使い方」をご覧ください。</p>
 
-<h2 id="default-absent">4. デフォルト欠席を設定する</h2>
+<h2 id="default-absent">6. デフォルト欠席を設定する</h2>
 <p>毎回欠席することが多いメンバーには、編集画面の <code>Absent by Default</code>（デフォルト欠席）をオンにしておくと、メンバーデータを読み込んだ際に自動的に休憩状態でリストに追加されます。</p>
 
-<h2 id="fixed-pair">5. 固定ペアを設定する</h2>
+<h2 id="fixed-pair">7. 固定ペアを設定する</h2>
 <p>編集画面の <strong>Fixed Pair</strong>（固定ペア）セクションから、常に同じペアを組むプレイヤーを指定できます。固定されたペアはプレイヤー名の下に ♥ マーク付きで表示されます。</p>
 <div class="ss"><img src="images/players-overview.png" alt="固定ペア表示"></div>
 <div class="tip">💡 固定ペアはペアごとに色分けされるので、一覧から一目で確認できます。</div>
 
-<h2 id="status">6. 現在の出場状況を確認する</h2>
+<h2 id="status">8. 現在の出場状況を確認する</h2>
 <p>Players タブのリストで、プレイヤー名の左に丸印が表示されます。<strong>赤丸</strong>は現在進行中の試合に出場していることを示し、<strong>グレーの丸</strong>はそれ以外（次の組み合わせ待ちや休憩中など）を示します。</p>
 <div class="ss"><img src="images/players-status.png" alt="出場中（赤丸）と待機中（グレーの丸）の表示"></div>
 <div class="tip">💡 右側の「Playing（出場中） / Resting（休憩中） / Absent（欠席）」表示は出場設定（休憩トグル）を示すもので、この丸印とは意味が異なります。丸印はあくまで「いまコートで試合中かどうか」を表します。</div>
 
-<h2 id="pin">7. ピン留めで優先出場させる</h2>
+<h2 id="pin">9. ピン留めで優先出場させる</h2>
 <p>丸印をタップすると、そのプレイヤーはピン留め状態になり、丸印の代わりにピンのアイコンが表示されます。ピン留めされたプレイヤーは、待ち回数に関わらず次の組み合わせで最優先に選ばれます。もう一度ピンのアイコンをタップすると、ピン留めが解除されて丸印表示に戻ります。</p>
 <div class="ss"><img src="images/players-pin.png" alt="ピン留め表示"></div>
 <div class="tip">💡 固定ペアを組んでいる場合、ピン留め・解除はペア相手にも連動します。また、休憩中のプレイヤーをピン留めすると、休憩状態は自動的に解除されます。</div>
 <div class="tip">💡 ピン留めは保存されない一時的な指定です。アプリを再起動したり、メンバーを読み込み直したりするとリセットされます。</div>
 
-<h2 id="save-load">8. メンバーを保存・読み込む</h2>
+<h2 id="save-load">10. メンバーを保存・読み込む</h2>
 <p>Players タブ左上の <code>⋯</code> メニューから以下の操作ができます。</p>
 <ul>
   <li><strong>Save</strong>（保存） — 現在のプレイヤーリストをメンバーデータベースに保存</li>
@@ -71,7 +108,7 @@
 <p>グループを割り当てたら、<code>⋯</code> メニューの <strong>Save</strong>（保存）でメンバーデータベースに保存してください。</p>
 <div class="ss"><img src="images/players-group-select.png" alt="グループ選択画面"></div>
 
-<h2 id="shuffle">9. 開始順をシャッフルする</h2>
+<h2 id="shuffle">11. 開始順をシャッフルする</h2>
 <p>組み合わせはプレイヤーリストの並び順をもとに決まります。同じメンバーで練習を重ねていると、Game タブの <code>↩</code> でゲームを初期化するたびに、毎回同じ組み合わせから始まってしまうことがあります。Players タブ下部のシャッフルアイコン（🔀）をタップすると、プレイヤーの名前・レベル・出場設定などをリスト内でランダムに入れ替え、次の組み合わせの偏りを防げます。</p>
 <div class="tip">💡 シャッフルは、まだ1回も組み合わせを生成していない状態（初期化直後）でのみ実行できます。試合を始めた後にシャッフルしたい場合は、先に Game タブの <code>↩</code> リセットボタンで初期化してください。</div>
 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>PairGen – ゲームタブ</title>
+<style>
+  body{font-family:-apple-system,sans-serif;max-width:720px;margin:0 auto;padding:24px;color:#1a1a1a;line-height:1.75}
+  h1{font-size:26px;font-weight:700;border-bottom:2px solid #e0e0e0;padding-bottom:10px}
+  h2{font-size:18px;font-weight:600;margin-top:36px;color:#1a6fbf}
+  h3{font-size:15px;font-weight:600;margin-top:24px}
+  h4{font-size:14px;font-weight:600;margin-top:16px;color:#444}
+  code{background:#f0f0f0;padding:1px 6px;border-radius:4px;font-size:14px}
+  .ss img{max-width:100%;border-radius:8px;border:1px solid #ddd;display:block;margin:16px auto}
+  .tip{background:#e8f5e9;border-left:4px solid #4caf50;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .note{background:#fff8e1;border-left:4px solid #ffc107;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .warn{background:#fff8e1;border-left:4px solid #ffc107;padding:10px 14px;border-radius:4px;font-size:14px;margin-top:8px}
+  .back-link{display:inline-block;margin-bottom:8px;font-size:14px}
+  .toc{background:#f5f8fb;border:1px solid #dde6ee;border-radius:8px;padding:14px 20px;margin:16px 0 28px}
+  .toc ul{margin:0;padding-left:20px}
+  .toc li{margin-bottom:4px;font-size:14px}
+  .toc li ul{margin-top:4px;padding-left:18px}
+  .toc li li{margin-bottom:2px;font-size:13px}
+  .toc a{color:#1a6fbf;text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<p class="back-link"><a href="home.html">← ホームに戻る</a></p>
+<h1>ゲームタブ</h1>
+<p>Game タブでは、組み合わせの生成、試合中のスコア記録、他の端末とのセッション共有、結果のメール送信、簡易サーバー機能を利用できます。</p>
+
+<nav class="toc">
+<ul>
+  <li><a href="#generate">1. 組み合わせの生成</a></li>
+  <li><a href="#free-mode">2. フリーモード（動的コート割り当て）</a></li>
+  <li><a href="#undo">3. 直前の組み合わせを取り消す</a></li>
+  <li><a href="#reset-scores">4. 試合結果をリセットする</a></li>
+  <li><a href="#score-input">5. スコア入力</a></li>
+  <li><a href="#menu">6. ゲームタブのメニュー</a>
+    <ul>
+      <li><a href="#airdrop-share">セッションの共有（AirDrop）</a></li>
+      <li><a href="#mail-results">結果をメールする</a></li>
+      <li><a href="#server">サーバー機能（試験的）</a></li>
+    </ul>
+  </li>
+</ul>
+</nav>
+
+<h2 id="generate">1. 組み合わせの生成</h2>
+<p>Game タブを開いて <code>Generate Combination</code>（組み合わせ生成）ボタンをタップすると、次のラウンドの組み合わせが生成されます。プレイヤーが各コートに自動で割り当てられ、重複が少なくなるよう自動的に調整されます。</p>
+<p>ボタンをタップするたびに次のラウンドが追加されていきます。</p>
+
+<h2 id="free-mode">2. フリーモード（動的コート割り当て）</h2>
+<p>Game タブ上部のモードセレクターで <strong>Free</strong>（フリー）を選ぶと、フリーモードに切り替わります。</p>
+<p>フリーモードでは、コートごとに試合の終了・再開を個別に管理できます。空いたコートだけに次の組み合わせが生成されるため、試合時間がバラバラでも効率よく進行できます。</p>
+<div class="note">⚠️ フリーモードに切り替えるには、<strong>コートが2面以上</strong>かつ<strong>有効なプレイヤーが8人以上</strong>必要です。条件を満たさない場合はアラートが表示され、Round モードのままになります。</div>
+
+<h3>フリーモードの操作</h3>
+<ul>
+  <li>試合が終わったら、そのコートの行を左スワイプして <strong>Finish</strong>（終了マーク）をタップ</li>
+  <li><code>Generate Combination</code>（組み合わせ生成）で空きコートのみ次の組み合わせが生成されます</li>
+  <li>終了済みコートは灰色、新しく割り当てられたコートは黄色でハイライトされます</li>
+</ul>
+<div class="ss"><img src="images/advanced-free-mode.png" alt="フリーモードのコート一覧"></div>
+<div class="ss"><img src="images/advanced-free-mode-swipe.png" alt="コートの行を左スワイプして Finish ボタンを表示した状態"></div>
+<div class="tip">💡 フリーモードでは Apple Watch からもコートの終了マークを操作できます。</div>
+<div class="tip">💡 コート一覧での Finish（終了）/Resume（再開）操作と、スコア入力画面の <strong>Finished</strong>（終了）トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
+
+<h2 id="undo">3. 直前の組み合わせを取り消す</h2>
+<p>Game タブで、最後のラウンドの行を<strong>左にスワイプ</strong>すると削除できます。プレイヤーの出場回数なども元の状態に戻ります。</p>
+<div class="ss"><img src="images/game-swipe-delete.png" alt="スワイプで取り消し"></div>
+
+<h2 id="reset-scores">4. 試合結果をリセットする</h2>
+<p>Game タブ右上の <code>↩</code>（リセット）ボタンをタップすると、確認アラート「Delete Match Info」（ゲーム情報を削除）が表示されます。<strong>Delete</strong>（削除）を選ぶと、これまでの試合結果がすべて削除されます（プレイヤー自体は削除されません）。</p>
+<div class="tip">💡 プレイヤーごと最初からやり直したい場合は、Players タブの「プレイヤーのリセット」をご利用ください。</div>
+
+<h2 id="score-input">5. スコア入力</h2>
+<p>Game タブのゲーム行をタップすると、スコア入力画面が開きます。</p>
+<div class="ss"><img src="images/score-main.png" alt="スコア入力画面"></div>
+
+<h3 id="input-score">得点を入力する</h3>
+<p>画面右側の <code>L Point</code>（得点 L）または <code>R Point</code>（得点 R）ボタンをタップすると、左・右チームに1点が加算されます。</p>
+<p>得点に合わせてサーブ権が自動で切り替わり、サーブ権を持つプレイヤーが青色で表示されます。</p>
+<div class="tip">💡 得点は最大 30 点まで入力できます。</div>
+
+<h3 id="undo-score">得点を取り消す</h3>
+<p><code>↩</code>（取り消し）ボタンで直前の得点を1点ずつ取り消せます。</p>
+
+<h3 id="switch-game">ゲームを切り替える</h3>
+<p>画面左側のセグメントピッカー（<code>G1 / G2 / G3</code>）で第1ゲーム・第2ゲーム・第3ゲームを切り替えます。</p>
+
+<h3 id="finish-game">ゲーム終了を記録する</h3>
+<p><code>Finished</code>（終了）トグルをオンにするとそのゲームが終了扱いになり、勝利ゲーム数に反映されます。</p>
+
+<h3 id="end-change">エンドチェンジ</h3>
+<p><code>End</code>（エンド）ボタンをタップすると、左右のペアが入れ替わります（エンドチェンジ）。スコア履歴のドットも自動で反転します。</p>
+
+<h3 id="serve">サーブ権を変更する</h3>
+<p>ゲーム開始前（まだ得点が入っていない状態）に限り、<code>Serve</code>（サーブ）ボタンでサービス権チームを入れ替えられます。また、プレイヤー名をタップすると、同ペア内でサーバーとレシーバーを入れ替えられます。</p>
+
+<h3 id="reset-score">スコアをリセットする</h3>
+<p>画面右上の <code>↩</code> アイコンから、そのゲームのスコアをリセットできます。</p>
+
+<h2 id="menu">6. ゲームタブのメニュー</h2>
+<p>Game タブ左上の「⋯」から、以下の機能を利用できます。</p>
+
+<h3 id="airdrop-share">セッションの共有（AirDrop）</h3>
+<p>前半は複数レベルを一緒に回してから、後半はコートごとにレベル分けして各コートで個別に進行したい場合、前半の組み合わせ情報を維持したまま AirDrop で他の iPhone にセッションを共有し、後半はコートごとに別々の端末で進行を分担できます。また、複数の運営者がそれぞれ別々にプレイヤーを登録した状態で合流したい場合にも、現在のプレイヤーリストと組み合わせ結果を共有できます。</p>
+
+<h4>送信側の操作</h4>
+<ul>
+  <li>Game タブ左上の「⋯」→ <strong>Share Session</strong>（セッションを共有）をタップ</li>
+  <li>案内アラートで <strong>Continue</strong>（続ける）を選ぶと共有シートが開くので、AirDrop で相手の端末に送信</li>
+</ul>
+
+<h4>受信側の操作</h4>
+<ul>
+  <li>AirDrop を承認するとファイルが Files アプリに保存されます</li>
+  <li>Files でそのファイルをタップ →（プレビュー画面の）共有ボタン → <strong>PairGen</strong> を選択</li>
+  <li>PairGen が起動し、確認ダイアログが表示されるので <strong>Replace</strong>（置き換え）をタップすると取り込まれます</li>
+</ul>
+
+<div class="tip">💡 取り込み後、現在のプレイヤーリストと組み合わせは送信側のデータに<strong>置き換わります</strong>（送信側にないプレイヤーもメンバーDBには残ります）。同じ名前で所属グループが1つ以上重なるプレイヤーは同一人物とみなして統合されます。</div>
+
+<div class="note">⚠️ Files アプリに保存された受信ファイルは PairGen 側からは自動削除できません。取り込みが終わったら、Files アプリから手動で削除してください。</div>
+
+<h3 id="mail-results">結果をメールする</h3>
+<p>Game タブ左上の「⋯」→ <strong>Mail Results</strong>（結果をメールする）をタップすると、メール作成画面が開き、これまでの組み合わせとスコアがあらかじめ本文に入力された状態で送信できます。</p>
+<ul>
+  <li>件名は「PairGen 年/月/日」の形式で自動入力されます</li>
+  <li>本文には参加者一覧と、ラウンドごとのコート組み合わせ・スコア（記録済みの場合）が含まれます</li>
+</ul>
+<div class="tip">💡 この端末に Mail アプリのアカウントが設定されていない場合は送信できません。あらかじめ「設定」アプリでメールアカウントを追加してください。</div>
+
+<h3 id="server">サーバー機能（試験的）</h3>
+<p>PairGen を入れた端末（マスター）でサーバーを起動すると、同じ Wi-Fi に接続した他の携帯・タブレットの Web ブラウザから、現在の組み合わせやプレイヤー一覧を見たり、一部の操作を行ったりできます。大会運営スタッフなど、複数人でコート状況を共有したい場合に便利です。普段のゲーム練などでもマスターの端末以外の複数端末から OS に関係なく現在の状況や進行を操作することが可能です。またゲーム練の途中からフリーモードに切り替えてコートごとにレベルを割り振って個別に進行を操作することも可能です。</p>
+<div class="warn">⚠️ この機能は試験的なものです。今後の更新で仕様が変わる可能性があります。</div>
+
+<h4 id="start-server">サーバーを起動する</h4>
+<p><strong>Game</strong>（ゲーム）タブ左上の Wi-Fi アイコン（または「…」メニューの「Start Server」＝サーバーを起動）をタップします。案内画面が表示されるので、内容を確認して「スタート」をタップすると起動します。</p>
+<div class="ss"><img src="images/server-start.png" alt="サーバー起動画面"></div>
+<div class="warn">⚠️ サーバー稼働中は、この端末の画面をロックしたり他のアプリに切り替えたりしないでください。他の端末との接続が切れる場合があります。</div>
+
+<h4 id="connect">他の端末から接続する</h4>
+<p>接続する端末を、マスター端末と同じ Wi-Fi（またはマスター端末のインターネット共有／パーソナルホットスポット）に接続してください。サーバー起動中に Wi-Fi アイコンをタップすると、接続用の URL と QR コードが表示されます。QR コードを読み取るか、URL を直接ブラウザで開いてください。</p>
+<div class="ss"><img src="images/server-qr.png" alt="QRコード表示画面"></div>
+
+<h4 id="web-features">Web ページでできること</h4>
+<ul>
+  <li>現在の組み合わせ（ラウンド／フリー両モード対応）とプレイヤー一覧の確認</li>
+  <li>各コートの表示にレベルバッジを表示</li>
+  <li><strong>スコア入力</strong> — コートの組み合わせをタップするとスコア入力画面が開きます。L/Rボタンでの得点入力（タップの都度サーバーへ即時反映）、サーバー/レシーバーの表示と交代、undo、エンド交代・サーブ交代、セット（ゲーム）の終了設定に対応</li>
+  <li><strong>組み合わせ生成</strong> — 次のラウンドの組み合わせを生成します</li>
+  <li><strong>コートの終了／再開</strong>（フリーモード時）— コートをタップして切り替えます</li>
+  <li><strong>プレイヤーの出場／休憩の切り替え</strong></li>
+  <li><strong>プレイヤーのレベル変更</strong> — レベルバッジをタップして巡回変更します</li>
+  <li><strong>ラウンド／フリーの切り替え</strong> — 見出し右のスイッチで切り替えます</li>
+</ul>
+<div class="ss"><img src="images/server-webclient.png" alt="Web ページ表示例"></div>
+<div class="tip">💡 Web ページは2.5秒おきに自動更新されます。手動でのリロードは不要です。</div>
+
+<h4 id="stop-server">サーバーを停止する</h4>
+<p>再度 Wi-Fi アイコンをタップすると、稼働状況の確認画面が開きます。「Stop Server」（サーバーを停止）をタップすると停止します。</p>
+
+</body>
+</html>
