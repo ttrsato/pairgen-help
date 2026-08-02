@@ -30,12 +30,15 @@
 
 <nav class="toc">
 <ul>
-  <li><a href="#generate">1. 組み合わせの生成</a></li>
-  <li><a href="#free-mode">2. フリーモード（動的コート割り当て）</a></li>
-  <li><a href="#undo">3. 直前の組み合わせを取り消す</a></li>
-  <li><a href="#reset-scores">4. 試合結果をリセットする</a></li>
-  <li><a href="#score-input">5. スコア入力</a></li>
-  <li><a href="#menu">6. ゲームタブのメニュー</a>
+  <li><a href="#generate">1. ラウンドモード（全コート一括生成）</a>
+    <ul>
+      <li><a href="#undo">直前の組み合わせを取り消す</a></li>
+    </ul>
+  </li>
+  <li><a href="#free-mode">2. フリーモード（コート単位で個別生成）</a></li>
+  <li><a href="#reset-scores">3. 試合結果をリセットする</a></li>
+  <li><a href="#score-input">4. スコア入力</a></li>
+  <li><a href="#menu">5. ゲームタブのメニュー</a>
     <ul>
       <li><a href="#airdrop-share">セッションの共有（AirDrop）</a></li>
       <li><a href="#mail-results">結果をメールする</a></li>
@@ -45,11 +48,17 @@
 </ul>
 </nav>
 
-<h2 id="generate">1. 組み合わせの生成</h2>
-<p>Game タブを開いて <code>Generate Combination</code>（組み合わせ生成）ボタンをタップすると、次のラウンドの組み合わせが生成されます。プレイヤーが各コートに自動で割り当てられ、重複が少なくなるよう自動的に調整されます。</p>
-<p>ボタンをタップするたびに次のラウンドが追加されていきます。</p>
+<h2 id="generate">1. ラウンドモード（全コート一括生成）</h2>
+<p>Game タブを開くと、最初は <strong>Round</strong>（ラウンド）モードになっています。<code>Generate Combination</code>（組み合わせ生成）をタップするたびに、その時点の参加プレイヤー全員を対象に、全コート分の組み合わせを一括で生成する標準モードです。</p>
+<p>プレイヤーは自動的に各コートへ割り振られ、同じ相手との組み合わせが続けて重ならないよう調整されます。1ラウンドが終わったらボタンをタップして次のラウンドを生成する、という流れで進行します。</p>
+<div class="ss"><img src="images/home-main.png" alt="ラウンドモードの組み合わせ一覧"></div>
+<div class="tip">💡 Round（ラウンド）と Free（フリー）は、試合の途中でも何度でも切り替えられます。切り替えてもそれまでの試合記録は保持されます。</div>
 
-<h2 id="free-mode">2. フリーモード（動的コート割り当て）</h2>
+<h3 id="undo">直前の組み合わせを取り消す</h3>
+<p>Game タブで、最後のラウンドの行を<strong>左にスワイプ</strong>すると削除できます。プレイヤーの出場回数なども元の状態に戻ります。</p>
+<div class="ss"><img src="images/game-swipe-delete.png" alt="スワイプで取り消し"></div>
+
+<h2 id="free-mode">2. フリーモード（コート単位で個別生成）</h2>
 <p>Game タブ上部のモードセレクターで <strong>Free</strong>（フリー）を選ぶと、フリーモードに切り替わります。</p>
 <p>フリーモードでは、コートごとに試合の終了・再開を個別に管理できます。空いたコートだけに次の組み合わせが生成されるため、試合時間がバラバラでも効率よく進行できます。</p>
 <div class="note">⚠️ フリーモードに切り替えるには、<strong>1&amp;2混合コートを除いて2面以上</strong>かつ<strong>有効なプレイヤーが8人以上</strong>必要です。条件を満たさない場合はアラートが表示され、Round モードのままになります。</div>
@@ -60,20 +69,17 @@
   <li><code>Generate Combination</code>（組み合わせ生成）で空きコートのみ次の組み合わせが生成されます</li>
   <li>終了済みコートは灰色、進行中のコートは黄色と緑を交互に表示します（一覧の見やすさのための色分けで、コートの状態を表すものではありません）</li>
 </ul>
+<div class="note">⚠️ フリーモードでは、<a href="#undo">左スワイプで直前の組み合わせを取り消す操作</a>は利用できません（ラウンドモードのみの機能です）。組み合わせを間違えた場合は、そのコートを <strong>Finish</strong> にしてから再度 <code>Generate Combination</code> を行ってください。</div>
 <div class="ss"><img src="images/advanced-free-mode.png" alt="フリーモードのコート一覧"></div>
 <div class="ss"><img src="images/advanced-free-mode-swipe.png" alt="コートの行を左スワイプして Finish ボタンを表示した状態"></div>
 <div class="tip">💡 フリーモードでは Apple Watch からもコートの終了マークを操作できます。</div>
 <div class="tip">💡 コート一覧での Finish（終了）/Resume（再開）操作と、スコア入力画面の <strong>Finished</strong>（終了）トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
 
-<h2 id="undo">3. 直前の組み合わせを取り消す</h2>
-<p>Game タブで、最後のラウンドの行を<strong>左にスワイプ</strong>すると削除できます。プレイヤーの出場回数なども元の状態に戻ります。</p>
-<div class="ss"><img src="images/game-swipe-delete.png" alt="スワイプで取り消し"></div>
-
-<h2 id="reset-scores">4. 試合結果をリセットする</h2>
+<h2 id="reset-scores">3. 試合結果をリセットする</h2>
 <p>Game タブ右上の <code>↩</code>（リセット）ボタンをタップすると、確認アラート「Delete Match Info」（ゲーム情報を削除）が表示されます。<strong>Delete</strong>（削除）を選ぶと、これまでの試合結果がすべて削除されます（プレイヤー自体は削除されません）。</p>
 <div class="tip">💡 プレイヤーごと最初からやり直したい場合は、Players タブの「プレイヤーのリセット」をご利用ください。</div>
 
-<h2 id="score-input">5. スコア入力</h2>
+<h2 id="score-input">4. スコア入力</h2>
 <p>Game タブのゲーム行をタップすると、スコア入力画面が開きます。画面は上から順に、<code>Finished</code>（終了）トグル、そのコートで何ゲーム目かを切り替える <code>G1 / G2 / G3</code> ピッカーとここまでの勝ちゲーム数（<code>A: 0 - 0 :B</code>）、プレイヤー表示、<code>End</code> / <code>Serve</code> ボタン、得点ボタンという構成です。勝ちゲーム数とゲームピッカーのスコアは、常に <strong>PairA:PairB</strong> の順で固定表示され、後述のエンドチェンジを行っても入れ替わりません。</p>
 <p>プレイヤー表示には、それぞれ <strong>PairA</strong> / <strong>PairB</strong>（内部の pairA・pairB に対応）のラベルが付きます。こちらはエンドチェンジで実際の左右位置が入れ替わると、表示も一緒に切り替わります。</p>
 <div class="ss"><img src="images/score-main.png" alt="スコア入力画面"></div>
@@ -101,7 +107,7 @@
 <h3 id="reset-score">スコアをリセットする</h3>
 <p>画面右上の <code>↩</code> アイコンから、そのゲームのスコアをリセットできます。</p>
 
-<h2 id="menu">6. ゲームタブのメニュー</h2>
+<h2 id="menu">5. ゲームタブのメニュー</h2>
 <p>Game タブ左上の「⋯」から、以下の機能を利用できます。</p>
 
 <h3 id="airdrop-share">セッションの共有（AirDrop）</h3>
