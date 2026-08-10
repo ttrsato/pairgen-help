@@ -22,37 +22,37 @@
 
 <p class="back-link"><a href="home.html">← ホームに戻る</a></p>
 <h1>使ってみよう！</h1>
-<p>PairGen は <strong>Match</strong>（試合）・<strong>Players</strong>（プレイヤー）・<strong>Courts</strong>（コート）の3つのタブで構成されています。まずは基本の流れを試してみましょう。</p>
+<p>PairGen は <strong>Match</strong>（試合）・<strong>Players</strong>（プレイヤー）・<strong>Courts</strong>（コート）の3つのタブで構成されています。まずは基本の流れを試合タブで実行してみましょう。</p>
 
 <nav class="toc">
 <ul>
   <li><a href="#player-count">1. プレイヤー数を設定する</a></li>
-  <li><a href="#court-count">2. コート数を確認する</a></li>
+  <li><a href="#court-count">2. コート数を設定する</a></li>
   <li><a href="#generate">3. 組み合わせを生成する</a></li>
-  <li><a href="#reset-scores">4. 試合結果をリセットする</a></li>
+  <li><a href="#next-round">4. 次のラウンドを生成する</a></li>
 </ul>
 </nav>
 
-<div class="ss"><img src="images/game-empty.png" alt="タブ構成の概要"></div>
+<div class="ss"><img src="images/game-empty.png" alt="Match タブ・初期状態"></div>
 
 <h2 id="player-count">1. プレイヤー数を設定する</h2>
-<p><strong>Players</strong> タブを開きます。画面下部の <code>＋</code> / <code>－</code> ボタンでプレイヤー数を増減できます。</p>
-<div class="ss"><img src="images/players-plusminus.png" alt="Players タブ・+/- ボタン"></div>
-<p>初期状態では「1」「2」「3」…という番号が名前として割り当てられています。名前を変えるには、プレイヤー行をタップして編集画面を開いてください。</p>
-<p>画面上部のテキストフィールドに名前を入力して <code>Add</code>（追加）をタップすると、名前付きでプレイヤーを追加することもできます。カンマ区切りで複数名を一度に入力できます（例：<code>Alice, Bob, Carol, Dave</code>）。</p>
-<div class="tip">💡 マイクアイコンをタップすると音声入力も使えます。</div>
+<p><strong>Match</strong> タブの上部左側に「9 / 9 players」と表示されています。この <code>−</code> / <code>+</code> ボタンをタップするだけで、プレイヤー数を増減できます。</p>
+<div class="ss"><img src="images/game-players.png" alt="Match タブ・プレイヤー数設定"></div>
+<p>初期状態では「1」「2」「3」…という番号が名前として割り当てられています。詳しく名前を変えたい場合は、<strong>Players</strong> タブで編集できます。</p>
 
-<h2 id="court-count">2. コート数を確認する</h2>
-<p><strong>Courts</strong> タブを開きます。画面下部の <code>＋</code> / <code>－</code> ボタンでコート数を調整してください。</p>
-<div class="ss"><img src="images/courts-list.png" alt="Courts タブ"></div>
+<h2 id="court-count">2. コート数を設定する</h2>
+<p><strong>Match</strong> タブの上部右側に「2 courts」と表示されています。この <code>−</code> / <code>+</code> ボタンをタップするだけで、コート数を増減できます。</p>
+<div class="ss"><img src="images/game-courts.png" alt="Match タブ・コート数設定"></div>
+<p>詳しくコート設定（名前やレベル）を変えたい場合は、<strong>Courts</strong> タブで調整できます。</p>
 
 <h2 id="generate">3. 組み合わせを生成する</h2>
-<p><strong>Match</strong> タブを開いて <code>Generate Combination</code>（組み合わせ生成）ボタンをタップします。プレイヤーが各コートに自動で割り当てられます。</p>
-<div class="ss"><img src="images/game-round-main.png" alt="Match タブ・生成結果"></div>
-<p>ボタンをタップするたびに次のラウンドの組み合わせが追加されます。重複が少なくなるよう自動的に調整されます。</p>
+<p><strong>Match</strong> タブで <code>Generate Combination</code>（組み合わせ生成）ボタンをタップします。プレイヤーが各コートに自動で割り当てられます。</p>
+<div class="ss"><img src="images/game-combination.png" alt="Match タブ・組み合わせ生成結果"></div>
+<p>各行が1つのコートの試合を示しています。左側に付いているバッジはレベルを、右側のスコアは現在のゲーム結果を表します。</p>
 
-<h2 id="reset-scores">4. 試合結果をリセットする</h2>
-<p>Match タブ右上の <code>↩</code>（リセット）ボタンをタップすると、確認アラート「Delete Match Info」（ゲーム情報を削除）が表示されます。<strong>Delete</strong>（削除）を選ぶと、これまでの試合結果がすべて削除されます（プレイヤー自体は削除されません）。</p>
+<h2 id="next-round">4. 次のラウンドを生成する</h2>
+<p>ボタンをもう一度タップすると、次のラウンドの組み合わせが追加されます。重複が少なくなるよう自動的に調整されます。スコアは前のラウンドが記録されたままになります。</p>
+<div class="tip">💡 <strong>Match</strong> タブ右上の <code>↩</code>（リセット）ボタンをタップすると、試合結果をリセットできます。</div>
 
 </body>
 </html>
