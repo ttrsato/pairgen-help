@@ -13,6 +13,8 @@
   nav.pages{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 28px}
   nav.pages a{display:inline-block;padding:6px 12px;background:#eef4fb;color:#1a6fbf;border-radius:6px;text-decoration:none;font-size:14px}
   nav.pages a:hover{background:#dbe9f7}
+  .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin:16px 0}
+  .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 </style>
 </head>
 <body>
@@ -34,6 +36,9 @@
 </nav>
 
 <div class="ss"><img src="images/home-main.png" alt="メイン画面"></div>
+
+<h2>使い方動画</h2>
+<div class="video-wrap"><iframe src="https://www.youtube.com/embed/JjTxmzRezkI?si=3uAhXs-zWZqNJpqZ" title="PairGen 使い方動画" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 <h2>主な機能</h2>
 <ul>
@@ -72,6 +77,9 @@
   <li>プレイヤー編集画面に <code>▲</code> / <code>▼</code> ボタンを追加。一覧に戻らずそのまま前後のプレイヤーの編集画面に切り替えられるように変更</li>
   <li>スコア入力画面のプレイヤー名ボタンを縦に約1.5倍拡大し、左端にプレイヤーの写真を表示するように変更</li>
   <li>サーバー機能のWebページのエンド・サーブ入れ替え操作を、iPhone版と同じ小さな⇆ボタン方式に変更</li>
+  <li>サーバー機能のWebページのコート表示を、レベルバッジ・「コート」表記付きのコート名・組み合わせの順に変更し、それぞれの間隔を調整</li>
+  <li>Apple Watch の組み合わせ表示のレイアウトを変更。レベルバッジをコート名の左に表示し、コート名と組み合わせの間にスペースを追加。固定ペアはハートマークで表示するように変更</li>
+  <li>プレイヤータブの人数表示・コートタブの面数表示を、試合タブと同じ「出場中 / 全体」の形式に変更</li>
 </ul>
 
 <h2>フィードバック</h2>
