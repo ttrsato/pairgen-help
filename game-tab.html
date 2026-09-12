@@ -36,14 +36,15 @@
     </ul>
   </li>
   <li><a href="#free-mode">2. フリーモード（コート単位で個別生成）</a></li>
-  <li><a href="#reset-scores">3. 試合結果をリセットする</a></li>
-  <li><a href="#score-input">4. スコア入力</a>
+  <li><a href="#split-view">3. 画面を分割して表示する</a></li>
+  <li><a href="#reset-scores">4. 試合結果をリセットする</a></li>
+  <li><a href="#score-input">5. スコア入力</a>
     <ul>
       <li><a href="#game-point">Game Point（勝利に必要な得点）を設定する</a></li>
       <li><a href="#next-game-setup">G1・G2 終了後の自動設定</a></li>
     </ul>
   </li>
-  <li><a href="#menu">5. 試合タブのメニュー</a>
+  <li><a href="#menu">6. 試合タブのメニュー</a>
     <ul>
       <li><a href="#airdrop-share">セッションの共有（AirDrop）</a></li>
       <li><a href="#mail-results">結果をメールする</a></li>
@@ -82,11 +83,29 @@
 <div class="tip">💡 フリーモードでは Apple Watch からもコートの終了マークを操作できます。</div>
 <div class="tip">💡 コート一覧での Finish（終了）/Resume（再開）操作と、スコア入力画面の <strong>Finished</strong>（終了）トグルは連動しています。どちらか一方を操作すればもう一方にも反映されます。</div>
 
-<h2 id="reset-scores">3. 試合結果をリセットする</h2>
+<h2 id="split-view">3. 画面を分割して表示する</h2>
+<p>Match タブ上部のモードセレクターの右にあるボタンをタップすると、画面が上下に分割され、<strong>上段に最新ラウンドの組み合わせ、下段にプレイヤー一覧</strong>が表示されます。もう一度タップすると、組み合わせ一覧だけを表示する従来の表示に戻ります。</p>
+<div class="ss"><img src="images/game-split-view.png" alt="上段に組み合わせ、下段にプレイヤー一覧を表示した分割表示"></div>
+<div class="note">⚠️ この機能は iPhone 専用です。iPad では Players・Courts が常に画面左側に表示されているため、このボタンはありません。</div>
+<p>試合中にレベルや出場・休憩を変更したい場合でも、Players タブへ移動せずにその場で操作できます。下段の一覧では、Players タブと同じように以下の操作が行えます。</p>
+<ul>
+  <li><strong>レベルの変更</strong> — 左端のレベルバッジをタップして巡回変更します</li>
+  <li><strong>出場／休憩の切り替え</strong> — 右端のトグルで切り替えます</li>
+  <li><strong>ピン留め</strong> — 名前の左の丸印をタップします（出場中のプレイヤーは赤い丸で表示されます）</li>
+</ul>
+<p>上段の行をタップすると、通常どおりスコア入力画面が開きます。左スワイプの操作も通常の表示と同じです。</p>
+<ul>
+  <li><strong>ラウンドモード</strong> — 左スワイプで<a href="#undo">直前の組み合わせを取り消せます</a>（生成した直後の1回のみ）</li>
+  <li><strong>フリーモード</strong> — 上段には各コートの現在の試合が表示され、左スワイプで <strong>Finish</strong>（終了）／<strong>Resume</strong>（再開）を切り替えられます</li>
+</ul>
+<div class="note">⚠️ 下段の一覧からプレイヤーの編集画面（名前・写真・固定ペアの設定など）は開けません。編集する場合は Players タブをご利用ください。</div>
+<div class="tip">💡 この表示設定は端末ごとに記憶され、アプリを再起動しても保持されます。</div>
+
+<h2 id="reset-scores">4. 試合結果をリセットする</h2>
 <p>Match タブ右上の <code>↩</code>（リセット）ボタンをタップすると、確認アラート「Delete Match Info」（ゲーム情報を削除）が表示されます。<strong>Delete</strong>（削除）を選ぶと、これまでの試合結果がすべて削除されます（プレイヤー自体は削除されません）。</p>
 <div class="tip">💡 プレイヤーごと最初からやり直したい場合は、Players タブの「プレイヤーのリセット」をご利用ください。</div>
 
-<h2 id="score-input">4. スコア入力</h2>
+<h2 id="score-input">5. スコア入力</h2>
 <p>Match タブの試合行をタップすると、スコア入力画面が開きます。画面は上から順に、<code>Game Point</code>（勝利に必要な得点）の設定と <code>Finished</code>（終了）トグル、そのコートで何ゲーム目かを切り替える <code>G1 / G2 / G3</code> ピッカーとここまでの勝ちゲーム数（<code>A: 0 - 0 :B</code>）、プレイヤー表示、得点ボタンという構成です。勝ちゲーム数とゲームピッカーのスコアは、常に <strong>PairA:PairB</strong> の順で固定表示され、後述のエンドチェンジを行っても入れ替わりません。</p>
 <p>プレイヤー表示には、それぞれ <strong>PairA</strong> / <strong>PairB</strong>（内部の pairA・pairB に対応）のラベルが付きます。こちらはエンドチェンジで実際の左右位置が入れ替わると、表示も一緒に切り替わります。</p>
 <div class="ss"><img src="images/score-main.png" alt="スコア入力画面"></div>
@@ -133,7 +152,7 @@
 <h3 id="reset-score">スコアをリセットする</h3>
 <p>画面右上の <code>↩</code> アイコンから、そのゲームのスコアをリセットできます。</p>
 
-<h2 id="menu">5. 試合タブのメニュー</h2>
+<h2 id="menu">6. 試合タブのメニュー</h2>
 <p>Match タブ左上の「⋯」から、以下の機能を利用できます。</p>
 
 <h3 id="airdrop-share">セッションの共有（AirDrop）</h3>
